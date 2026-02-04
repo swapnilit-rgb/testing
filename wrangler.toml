@@ -1,0 +1,16 @@
+name = "browserbase-playwright"
+main = "src/index.ts"
+compatibility_date = "2025-12-22"
+
+[[containers]]
+class_name = "MyContainer"
+image = "./Dockerfile"
+max_instances = 5
+
+[[durable_objects.bindings]]
+class_name = "MyContainer"
+name = "MY_CONTAINER"
+
+[[migrations]]
+new_sqlite_classes = [ "MyContainer" ]
+tag = "v1"
