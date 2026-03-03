@@ -4,17 +4,21 @@
     "rootDir": "/Users/swapnil/browserbase-playwright/tests",
     "forbidOnly": false,
     "fullyParallel": false,
-    "globalSetup": null,
+    "globalSetup": "/Users/swapnil/browserbase-playwright/src/utils/clearTestResults.js",
     "globalTeardown": null,
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 8
     },
     "preserveOutput": "always",
     "reporter": [
+      [
+        "line",
+        null
+      ],
       [
         "html",
         null
@@ -24,6 +28,10 @@
         {
           "outputFile": "test-results.json"
         }
+      ],
+      [
+        "/Users/swapnil/browserbase-playwright/src/utils/slackReporter.js",
+        null
       ]
     ],
     "reportSlowTests": {
@@ -37,7 +45,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 8
         },
         "id": "",
         "name": "",
@@ -54,19 +62,19 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.57.0",
-    "workers": 1,
+    "workers": 8,
     "webServer": null
   },
   "suites": [
     {
-      "title": "main.spec.js",
-      "file": "main.spec.js",
+      "title": "about.spec.js",
+      "file": "about.spec.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Navigation and Links",
-          "ok": false,
+          "title": "About Us section",
+          "ok": true,
           "tags": [],
           "tests": [
             {
@@ -79,107 +87,487 @@
                 {
                   "workerIndex": 0,
                   "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 107404,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Session completed! View replay at https://browserbase.com/sessions/2f7322bf-219e-46ee-bfde-0cc4dfec6767\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "About Us section",
+                      "duration": 101758
+                    }
+                  ],
+                  "startTime": "2026-03-03T12:52:21.863Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "70203f60df0c0e033169-ae6d8d1b6dc94ac72997",
+          "file": "about.spec.js",
+          "line": 8,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ai-search.spec.js",
+      "file": "ai-search.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "AI Search",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 26363,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Session completed! View replay at https://browserbase.com/sessions/fb404292-7523-4571-a828-dc45f40f2c7a\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "AI Search",
+                      "duration": 20607
+                    }
+                  ],
+                  "startTime": "2026-03-03T12:52:21.862Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2cc61f8f71cde1a13dc3-a634486d409cdda7b76a",
+          "file": "ai-search.spec.js",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "cme-conferences.spec.js",
+      "file": "cme-conferences.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CME Conferences section",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
                   "status": "failed",
-                  "duration": 6427,
+                  "duration": 67961,
                   "error": {
-                    "message": "Error: Screenshot dimensions do not match",
-                    "stack": "Error: Screenshot dimensions do not match\n    at compareScreenshots (/Users/swapnil/browserbase-playwright/src/visual/compareScreenshot.js:23:11)\n    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:16:38)\n    at /Users/swapnil/browserbase-playwright/tests/main.spec.js:52:7\n    at /Users/swapnil/browserbase-playwright/tests/main.spec.js:47:4",
+                    "message": "Error: Visual regression: baseline and current images differ for \"cme-attend\". 485248 pixels differed.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Visual regression: baseline and current images differ for \"cme-attend\". 485248 pixels differed.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:31:41)\n    at /Users/swapnil/browserbase-playwright/tests/cme-conferences.spec.js:20:7\n    at runStepWithReporting (/Users/swapnil/browserbase-playwright/tests/helpers/testHelpers.js:4:5)\n    at /Users/swapnil/browserbase-playwright/tests/cme-conferences.spec.js:11:3",
                     "location": {
-                      "file": "/Users/swapnil/browserbase-playwright/src/visual/compareScreenshot.js",
-                      "column": 11,
-                      "line": 23
+                      "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                      "column": 41,
+                      "line": 31
                     },
-                    "snippet": "\u001b[90m   at \u001b[39m../src/visual/compareScreenshot.js:23\n\n\u001b[0m \u001b[90m 21 |\u001b[39m     imgA\u001b[33m.\u001b[39mheight \u001b[33m!==\u001b[39m imgB\u001b[33m.\u001b[39mheight\n \u001b[90m 22 |\u001b[39m   ) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Screenshot dimensions do not match'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m   }\n \u001b[90m 25 |\u001b[39m\n \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m diff \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mPNG\u001b[39m({ width\u001b[33m:\u001b[39m imgA\u001b[33m.\u001b[39mwidth\u001b[33m,\u001b[39m height\u001b[33m:\u001b[39m imgA\u001b[33m.\u001b[39mheight })\u001b[33m;\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[90m   at \u001b[39m../src/visual/visualCheckpoint.js:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m       \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresult\u001b[33m.\u001b[39mpassed) {\n \u001b[90m 30 |\u001b[39m         \u001b[36mconst\u001b[39m msg \u001b[33m=\u001b[39m \u001b[32m`Visual regression: baseline and current images differ for \"${name}\". ${result.diffPixels} pixels differed.`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(result\u001b[33m.\u001b[39mpassed\u001b[33m,\u001b[39m msg)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m       }\n \u001b[90m 33 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 34 |\u001b[39m       fs\u001b[33m.\u001b[39mcopyFileSync(current\u001b[33m,\u001b[39m baseline)\u001b[33m;\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
-                        "file": "/Users/swapnil/browserbase-playwright/src/visual/compareScreenshot.js",
-                        "column": 11,
-                        "line": 23
+                        "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                        "column": 41,
+                        "line": 31
                       },
-                      "message": "Error: Screenshot dimensions do not match\n\n\u001b[90m   at \u001b[39m../src/visual/compareScreenshot.js:23\n\n\u001b[0m \u001b[90m 21 |\u001b[39m     imgA\u001b[33m.\u001b[39mheight \u001b[33m!==\u001b[39m imgB\u001b[33m.\u001b[39mheight\n \u001b[90m 22 |\u001b[39m   ) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Screenshot dimensions do not match'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m   }\n \u001b[90m 25 |\u001b[39m\n \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m diff \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mPNG\u001b[39m({ width\u001b[33m:\u001b[39m imgA\u001b[33m.\u001b[39mwidth\u001b[33m,\u001b[39m height\u001b[33m:\u001b[39m imgA\u001b[33m.\u001b[39mheight })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at compareScreenshots (/Users/swapnil/browserbase-playwright/src/visual/compareScreenshot.js:23:11)\u001b[22m\n\u001b[2m    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:16:38)\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/main.spec.js:52:7\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/main.spec.js:47:4\u001b[22m"
+                      "message": "Error: Visual regression: baseline and current images differ for \"cme-attend\". 485248 pixels differed.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[90m   at \u001b[39m../src/visual/visualCheckpoint.js:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m       \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresult\u001b[33m.\u001b[39mpassed) {\n \u001b[90m 30 |\u001b[39m         \u001b[36mconst\u001b[39m msg \u001b[33m=\u001b[39m \u001b[32m`Visual regression: baseline and current images differ for \"${name}\". ${result.diffPixels} pixels differed.`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(result\u001b[33m.\u001b[39mpassed\u001b[33m,\u001b[39m msg)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m       }\n \u001b[90m 33 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 34 |\u001b[39m       fs\u001b[33m.\u001b[39mcopyFileSync(current\u001b[33m,\u001b[39m baseline)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:31:41)\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/cme-conferences.spec.js:20:7\u001b[22m\n\u001b[2m    at runStepWithReporting (/Users/swapnil/browserbase-playwright/tests/helpers/testHelpers.js:4:5)\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/cme-conferences.spec.js:11:3\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                        "column": 15,
+                        "line": 27
+                      },
+                      "message": "Error: Screenshot dimensions do not match. Baseline and current image sizes differ for \"cme-exhibit\".\n\n\u001b[90m   at \u001b[39m../src/visual/visualCheckpoint.js:27\n\n\u001b[0m \u001b[90m 25 |\u001b[39m           \u001b[33m?\u001b[39m \u001b[32m`Screenshot dimensions do not match. Baseline and current image sizes differ for \"${name}\".`\u001b[39m\n \u001b[90m 26 |\u001b[39m           \u001b[33m:\u001b[39m \u001b[32m`Screenshot comparison failed for \"${name}\". ${err.message || err}`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(msg)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m       }\n \u001b[90m 29 |\u001b[39m       \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresult\u001b[33m.\u001b[39mpassed) {\n \u001b[90m 30 |\u001b[39m         \u001b[36mconst\u001b[39m msg \u001b[33m=\u001b[39m \u001b[32m`Visual regression: baseline and current images differ for \"${name}\". ${result.diffPixels} pixels differed.`\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:27:15)\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/cme-conferences.spec.js:22:7\u001b[22m\n\u001b[2m    at runStepWithReporting (/Users/swapnil/browserbase-playwright/tests/helpers/testHelpers.js:4:5)\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/cme-conferences.spec.js:11:3\u001b[22m"
                     }
                   ],
-                  "stdout": [
-                    {
-                      "text": "Sending Slack notification {\n  status: \u001b[32m'failed'\u001b[39m,\n  title: \u001b[32m'Home page'\u001b[39m,\n  section: \u001b[32m'Home'\u001b[39m,\n  error: Error: Screenshot dimensions do not match\n      at compareScreenshots \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39msrc/visual/compareScreenshot.js:23:11\u001b[90m)\u001b[39m\n      at visualCheckpoint \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39msrc/visual/visualCheckpoint.js:16:38\u001b[90m)\u001b[39m\n      at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mtests/main.spec.js:52:7\n      at TestStepInfoImpl._runStepBody \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/testInfo.js:487:14\u001b[90m)\u001b[39m\n      at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/testType.js:245:20\n      at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/testType.js:243:18\n      at TestTypeImpl._step \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/testType.js:240:12\u001b[90m)\u001b[39m\n      at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mtests/main.spec.js:47:4\n      at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:322:9\n      at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/testInfo.js:311:11\n      at TimeoutManager.withRunnable \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/timeoutManager.js:67:14\u001b[90m)\u001b[39m\n      at TestInfoImpl._runWithTimeout \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/testInfo.js:309:7\u001b[90m)\u001b[39m\n      at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:320:7\n      at WorkerMain._runTest \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:295:5\u001b[90m)\u001b[39m\n      at WorkerMain.runTestGroup \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:199:11\u001b[90m)\u001b[39m\n      at process.<anonymous> \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/process.js:65:22\u001b[90m)\u001b[39m {\n    [\u001b[32mSymbol(step)\u001b[39m]: {\n      category: \u001b[32m'test.step'\u001b[39m,\n      title: \u001b[32m'Home page'\u001b[39m,\n      location: \u001b[36m[Object]\u001b[39m,\n      box: \u001b[90mundefined\u001b[39m,\n      stepId: \u001b[32m'test.step@32'\u001b[39m,\n      group: \u001b[90mundefined\u001b[39m,\n      boxedStack: \u001b[90mundefined\u001b[39m,\n      steps: \u001b[36m[Array]\u001b[39m,\n      attachmentIndices: [],\n      info: \u001b[36m[TestStepInfoImpl]\u001b[39m,\n      complete: \u001b[36m[Function: complete]\u001b[39m,\n      endWallTime: \u001b[33m1770106972148\u001b[39m,\n      error: \u001b[36m[Object]\u001b[39m\n    }\n  },\n  screenshotPath: \u001b[32m'errors/home-page.png'\u001b[39m,\n  testName: \u001b[32m'Navigation and Links'\u001b[39m\n}\n"
-                    },
-                    {
-                      "text": "[Slack] Notification sent successfully\n"
-                    },
-                    {
-                      "text": "Slack notification sent successfully\n"
-                    },
-                    {
-                      "text": "📊 Sending test report summary to Slack...\n"
-                    },
-                    {
-                      "text": "[Slack] Sending test report summary...\n"
-                    },
-                    {
-                      "text": "[Slack] Notification sent successfully\n"
-                    },
-                    {
-                      "text": "✓ Test report summary sent to Slack successfully\n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [
                     {
-                      "text": "Home page failed Error: Screenshot dimensions do not match\n    at compareScreenshots \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39msrc/visual/compareScreenshot.js:23:11\u001b[90m)\u001b[39m\n    at visualCheckpoint \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39msrc/visual/visualCheckpoint.js:16:38\u001b[90m)\u001b[39m\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mtests/main.spec.js:52:7\n    at TestStepInfoImpl._runStepBody \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/testInfo.js:487:14\u001b[90m)\u001b[39m\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/testType.js:245:20\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/testType.js:243:18\n    at TestTypeImpl._step \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/testType.js:240:12\u001b[90m)\u001b[39m\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mtests/main.spec.js:47:4\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:322:9\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/testInfo.js:311:11\n    at TimeoutManager.withRunnable \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/timeoutManager.js:67:14\u001b[90m)\u001b[39m\n    at TestInfoImpl._runWithTimeout \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/testInfo.js:309:7\u001b[90m)\u001b[39m\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:320:7\n    at WorkerMain._runTest \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:295:5\u001b[90m)\u001b[39m\n    at WorkerMain.runTestGroup \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:199:11\u001b[90m)\u001b[39m\n    at process.<anonymous> \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/process.js:65:22\u001b[90m)\u001b[39m\n"
+                      "text": "CME Conferences section failed Error: Screenshot dimensions do not match. Baseline and current image sizes differ for \"cme-exhibit\".\n    at visualCheckpoint \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39msrc/visual/visualCheckpoint.js:27:15\u001b[90m)\u001b[39m\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mtests/cme-conferences.spec.js:22:7\n    at runStepWithReporting \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mtests/helpers/testHelpers.js:4:5\u001b[90m)\u001b[39m\n    at TestStepInfoImpl._runStepBody \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/testInfo.js:487:14\u001b[90m)\u001b[39m\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/testType.js:245:20\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/testType.js:243:18\n    at TestTypeImpl._step \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/testType.js:240:12\u001b[90m)\u001b[39m\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mtests/cme-conferences.spec.js:11:3\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:322:9\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/testInfo.js:311:11\n    at TimeoutManager.withRunnable \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/timeoutManager.js:67:14\u001b[90m)\u001b[39m\n    at TestInfoImpl._runWithTimeout \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/testInfo.js:309:7\u001b[90m)\u001b[39m\n    at \u001b[90m/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:320:7\n    at WorkerMain._runTest \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:295:5\u001b[90m)\u001b[39m\n    at WorkerMain.runTestGroup \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/worker/workerMain.js:199:11\u001b[90m)\u001b[39m\n    at process.<anonymous> \u001b[90m(/Users/swapnil/browserbase-playwright/\u001b[39mnode_modules/\u001b[4mplaywright\u001b[24m/lib/common/process.js:65:22\u001b[90m)\u001b[39m\n"
                     }
                   ],
                   "retry": 0,
                   "steps": [
                     {
-                      "title": "Home page",
-                      "duration": 5592,
+                      "title": "CME Conferences section",
+                      "duration": 63120,
                       "error": {
-                        "message": "Error: Screenshot dimensions do not match",
-                        "stack": "Error: Screenshot dimensions do not match\n    at compareScreenshots (/Users/swapnil/browserbase-playwright/src/visual/compareScreenshot.js:23:11)\n    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:16:38)\n    at /Users/swapnil/browserbase-playwright/tests/main.spec.js:52:7\n    at /Users/swapnil/browserbase-playwright/tests/main.spec.js:47:4",
+                        "message": "Error: Screenshot dimensions do not match. Baseline and current image sizes differ for \"cme-exhibit\".",
+                        "stack": "Error: Screenshot dimensions do not match. Baseline and current image sizes differ for \"cme-exhibit\".\n    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:27:15)\n    at /Users/swapnil/browserbase-playwright/tests/cme-conferences.spec.js:22:7\n    at runStepWithReporting (/Users/swapnil/browserbase-playwright/tests/helpers/testHelpers.js:4:5)\n    at /Users/swapnil/browserbase-playwright/tests/cme-conferences.spec.js:11:3",
                         "location": {
-                          "file": "/Users/swapnil/browserbase-playwright/src/visual/compareScreenshot.js",
-                          "column": 11,
-                          "line": 23
+                          "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                          "column": 15,
+                          "line": 27
                         },
-                        "snippet": "\u001b[90m   at \u001b[39m../src/visual/compareScreenshot.js:23\n\n\u001b[0m \u001b[90m 21 |\u001b[39m     imgA\u001b[33m.\u001b[39mheight \u001b[33m!==\u001b[39m imgB\u001b[33m.\u001b[39mheight\n \u001b[90m 22 |\u001b[39m   ) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Screenshot dimensions do not match'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 24 |\u001b[39m   }\n \u001b[90m 25 |\u001b[39m\n \u001b[90m 26 |\u001b[39m   \u001b[36mconst\u001b[39m diff \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mPNG\u001b[39m({ width\u001b[33m:\u001b[39m imgA\u001b[33m.\u001b[39mwidth\u001b[33m,\u001b[39m height\u001b[33m:\u001b[39m imgA\u001b[33m.\u001b[39mheight })\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[90m   at \u001b[39m../src/visual/visualCheckpoint.js:27\n\n\u001b[0m \u001b[90m 25 |\u001b[39m           \u001b[33m?\u001b[39m \u001b[32m`Screenshot dimensions do not match. Baseline and current image sizes differ for \"${name}\".`\u001b[39m\n \u001b[90m 26 |\u001b[39m           \u001b[33m:\u001b[39m \u001b[32m`Screenshot comparison failed for \"${name}\". ${err.message || err}`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 27 |\u001b[39m         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(msg)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 28 |\u001b[39m       }\n \u001b[90m 29 |\u001b[39m       \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresult\u001b[33m.\u001b[39mpassed) {\n \u001b[90m 30 |\u001b[39m         \u001b[36mconst\u001b[39m msg \u001b[33m=\u001b[39m \u001b[32m`Visual regression: baseline and current images differ for \"${name}\". ${result.diffPixels} pixels differed.`\u001b[39m\u001b[33m;\u001b[39m\u001b[0m"
                       }
                     }
                   ],
-                  "startTime": "2026-02-03T08:22:46.175Z",
+                  "startTime": "2026-03-03T12:52:21.879Z",
                   "annotations": [],
                   "attachments": [
                     {
                       "name": "error-context",
                       "contentType": "text/markdown",
-                      "path": "/Users/swapnil/browserbase-playwright/test-results/main-Navigation-and-Links/error-context.md"
+                      "path": "/Users/swapnil/browserbase-playwright/test-results/cme-conferences-CME-Conferences-section/error-context.md"
                     }
                   ],
                   "errorLocation": {
-                    "file": "/Users/swapnil/browserbase-playwright/src/visual/compareScreenshot.js",
-                    "column": 11,
-                    "line": 23
+                    "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                    "column": 41,
+                    "line": 31
                   }
                 }
               ],
               "status": "unexpected"
             }
           ],
-          "id": "89836371d14dc78a5411-44ea8513761ac73b6656",
-          "file": "main.spec.js",
-          "line": 43,
-          "column": 7
+          "id": "d6c44c54ed5819dc2366-db8cfb927e6931d776a0",
+          "file": "cme-conferences.spec.js",
+          "line": 8,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "funding.spec.js",
+      "file": "funding.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Funding Opportunities section",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "interrupted",
+                  "duration": 173556,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Funding Opportunities section",
+                      "duration": -1
+                    }
+                  ],
+                  "startTime": "2026-03-03T12:52:21.868Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "9f64184589fccd4744d1-e53f3ff090af038c1d4d",
+          "file": "funding.spec.js",
+          "line": 8,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "get-involved.spec.js",
+      "file": "get-involved.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Get Involved section",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 4,
+                  "status": "interrupted",
+                  "duration": 173554,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Get Involved section",
+                      "duration": -1
+                    }
+                  ],
+                  "startTime": "2026-03-03T12:52:21.867Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "31dbf2b9538c86eba01c-2e18e01f1b97dfc72d6f",
+          "file": "get-involved.spec.js",
+          "line": 8,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "home.spec.js",
+      "file": "home.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Home page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 5,
+                  "status": "passed",
+                  "duration": 34178,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Session completed! View replay at https://browserbase.com/sessions/63f645ac-176b-41fb-8134-5afa5ecbdb70\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Home page",
+                      "duration": 28130
+                    }
+                  ],
+                  "startTime": "2026-03-03T12:52:21.835Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "379953442ddfc3019abd-003de6c5e2fe148b0f4a",
+          "file": "home.spec.js",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "news.spec.js",
+      "file": "news.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "News section",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 6,
+                  "status": "failed",
+                  "duration": 96330,
+                  "error": {
+                    "message": "Error: Visual regression: baseline and current images differ for \"news-blog\". 494426 pixels differed.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: Visual regression: baseline and current images differ for \"news-blog\". 494426 pixels differed.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:31:41)\n    at /Users/swapnil/browserbase-playwright/tests/news.spec.js:20:7\n    at runStepWithReporting (/Users/swapnil/browserbase-playwright/tests/helpers/testHelpers.js:4:5)\n    at /Users/swapnil/browserbase-playwright/tests/news.spec.js:11:3",
+                    "location": {
+                      "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                      "column": 41,
+                      "line": 31
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39m../src/visual/visualCheckpoint.js:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m       \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresult\u001b[33m.\u001b[39mpassed) {\n \u001b[90m 30 |\u001b[39m         \u001b[36mconst\u001b[39m msg \u001b[33m=\u001b[39m \u001b[32m`Visual regression: baseline and current images differ for \"${name}\". ${result.diffPixels} pixels differed.`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(result\u001b[33m.\u001b[39mpassed\u001b[33m,\u001b[39m msg)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m       }\n \u001b[90m 33 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 34 |\u001b[39m       fs\u001b[33m.\u001b[39mcopyFileSync(current\u001b[33m,\u001b[39m baseline)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                        "column": 41,
+                        "line": 31
+                      },
+                      "message": "Error: Visual regression: baseline and current images differ for \"news-blog\". 494426 pixels differed.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[90m   at \u001b[39m../src/visual/visualCheckpoint.js:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m       \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresult\u001b[33m.\u001b[39mpassed) {\n \u001b[90m 30 |\u001b[39m         \u001b[36mconst\u001b[39m msg \u001b[33m=\u001b[39m \u001b[32m`Visual regression: baseline and current images differ for \"${name}\". ${result.diffPixels} pixels differed.`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(result\u001b[33m.\u001b[39mpassed\u001b[33m,\u001b[39m msg)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m       }\n \u001b[90m 33 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 34 |\u001b[39m       fs\u001b[33m.\u001b[39mcopyFileSync(current\u001b[33m,\u001b[39m baseline)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:31:41)\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/news.spec.js:20:7\u001b[22m\n\u001b[2m    at runStepWithReporting (/Users/swapnil/browserbase-playwright/tests/helpers/testHelpers.js:4:5)\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/news.spec.js:11:3\u001b[22m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                        "column": 41,
+                        "line": 31
+                      },
+                      "message": "Error: Visual regression: baseline and current images differ for \"news-thecancernews\". 530052 pixels differed.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[90m   at \u001b[39m../src/visual/visualCheckpoint.js:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m       \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresult\u001b[33m.\u001b[39mpassed) {\n \u001b[90m 30 |\u001b[39m         \u001b[36mconst\u001b[39m msg \u001b[33m=\u001b[39m \u001b[32m`Visual regression: baseline and current images differ for \"${name}\". ${result.diffPixels} pixels differed.`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(result\u001b[33m.\u001b[39mpassed\u001b[33m,\u001b[39m msg)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m       }\n \u001b[90m 33 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 34 |\u001b[39m       fs\u001b[33m.\u001b[39mcopyFileSync(current\u001b[33m,\u001b[39m baseline)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:31:41)\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/news.spec.js:24:7\u001b[22m\n\u001b[2m    at runStepWithReporting (/Users/swapnil/browserbase-playwright/tests/helpers/testHelpers.js:4:5)\u001b[22m\n\u001b[2m    at /Users/swapnil/browserbase-playwright/tests/news.spec.js:11:3\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "Session completed! View replay at https://browserbase.com/sessions/bedb791a-d8c9-429d-b3c2-3853641cfa6b\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "News section",
+                      "duration": 90760,
+                      "error": {
+                        "message": "Error: Visual regression: baseline and current images differ for \"news-blog\". 494426 pixels differed.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: Visual regression: baseline and current images differ for \"news-blog\". 494426 pixels differed.\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at visualCheckpoint (/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js:31:41)\n    at /Users/swapnil/browserbase-playwright/tests/news.spec.js:20:7\n    at runStepWithReporting (/Users/swapnil/browserbase-playwright/tests/helpers/testHelpers.js:4:5)\n    at /Users/swapnil/browserbase-playwright/tests/news.spec.js:11:3",
+                        "location": {
+                          "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                          "column": 41,
+                          "line": 31
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m../src/visual/visualCheckpoint.js:31\n\n\u001b[0m \u001b[90m 29 |\u001b[39m       \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresult\u001b[33m.\u001b[39mpassed) {\n \u001b[90m 30 |\u001b[39m         \u001b[36mconst\u001b[39m msg \u001b[33m=\u001b[39m \u001b[32m`Visual regression: baseline and current images differ for \"${name}\". ${result.diffPixels} pixels differed.`\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 31 |\u001b[39m         expect\u001b[33m.\u001b[39msoft(result\u001b[33m.\u001b[39mpassed\u001b[33m,\u001b[39m msg)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 32 |\u001b[39m       }\n \u001b[90m 33 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 34 |\u001b[39m       fs\u001b[33m.\u001b[39mcopyFileSync(current\u001b[33m,\u001b[39m baseline)\u001b[33m;\u001b[39m\u001b[0m"
+                      }
+                    }
+                  ],
+                  "startTime": "2026-03-03T12:52:21.866Z",
+                  "annotations": [],
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/Users/swapnil/browserbase-playwright/src/visual/visualCheckpoint.js",
+                    "column": 41,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1c23bb2baf6bcf29601f-8ade91b2aee957d25ba8",
+          "file": "news.spec.js",
+          "line": 8,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "projects.spec.js",
+      "file": "projects.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Projects section",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 300000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 7,
+                  "status": "interrupted",
+                  "duration": 173556,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Projects section",
+                      "duration": -1
+                    }
+                  ],
+                  "startTime": "2026-03-03T12:52:21.866Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "df3d005868b50a84764f-df46b5e9078566fcd9a4",
+          "file": "projects.spec.js",
+          "line": 9,
+          "column": 5
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-02-03T08:22:45.859Z",
-    "duration": 7147.474999999999,
-    "expected": 0,
-    "skipped": 0,
-    "unexpected": 1,
+    "startTime": "2026-03-03T12:52:21.319Z",
+    "duration": 174152.782,
+    "expected": 3,
+    "skipped": 3,
+    "unexpected": 2,
     "flaky": 0
   }
 }

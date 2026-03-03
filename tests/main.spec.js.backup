@@ -1,0 +1,198 @@
+import 'dotenv/config';
+import { test , expect } from '@playwright/test';
+import createSession from '../fixtures/browserbase.fixture.js';
+import { visualCheckpoint } from '../src/visual/visualCheckpoint.js';
+import { clickHeaderMenuItem } from '../src/navigation/headerMenu.js';
+import { notifySlack, sendTestReport } from '../src/utils/slackNotifier.js';
+
+let slackResults = [];
+
+async function runStepWithReporting(page, { title, section, screenshotPath, testName }, fn) {
+  let error;
+  let capturedScreenshotPath;
+  try {
+    await fn();
+  } catch (e) {
+    error = e;
+    capturedScreenshotPath = screenshotPath;
+    await page.screenshot({ path: screenshotPath, fullPage: true });
+    console.error(`${title} failed`, e);
+  } finally {
+    slackResults.push({
+      status: error ? 'failed' : 'passed',
+      title,
+      section,
+      error,
+      screenshotPath: capturedScreenshotPath,
+      testName,
+    });
+    if (error) throw error;
+  }
+}
+
+test.beforeEach(async ({}, testInfo) => {
+  slackResults = []; // reset before each test
+});
+
+test.afterAll(async () => {
+   try {
+     const result = await sendTestReport('test-results.json', slackResults);
+    
+     if (result.success) {
+       console.log('Test report summary sent to Slack successfully');
+     } else {
+       console.warn('Failed to send test report:', result.error);
+     }
+   } catch (err) {
+     console.error('Error sending test report:', err);
+   }
+ });
+
+test('Navigation and Links', async () => {
+  const { session, page, browser } = await createSession();
+
+  // home page
+  await test.step('Home page', () =>
+    runStepWithReporting(page, {
+      title: 'Home page',
+      section: 'Home',
+      screenshotPath: 'errors/home-page.png',
+      testName: 'Navigation and Links',
+    }, async () => {
+      await page.goto('https://binaytara.org/');
+      await visualCheckpoint(page, 'home-page');
+    })
+  );
+
+  // about us
+  await test.step('About Us section', () =>
+    runStepWithReporting(page, {
+      title: 'About us section',
+      section: 'About Us',
+      screenshotPath: 'errors/about-us.png',
+      testName: 'Navigation and Links',
+    }, async () => {
+      await clickHeaderMenuItem(page, 'About Us', 'Mission and Values');
+      await visualCheckpoint(page, 'about-mission');
+      await clickHeaderMenuItem(page, 'About Us', 'Meet Our Team');
+      await visualCheckpoint(page, 'about-team');
+      await clickHeaderMenuItem(page, 'About Us', 'Financials and Transparency');
+      await visualCheckpoint(page, 'about-financials');
+      await clickHeaderMenuItem(page, 'About Us', 'Awards');
+      await visualCheckpoint(page, 'about-awards');
+    })
+  );
+  // cme conferences
+  await test.step('CME Conferences section', () =>
+    runStepWithReporting(page, {
+      title: 'CME Conferences section',
+      section: 'CME Conferences',
+      screenshotPath: 'errors/cme-conferences.png',
+      testName: 'Navigation and Links',
+    }, async () => {
+      await clickHeaderMenuItem(page, 'CME Conferences', 'Attend');
+      await visualCheckpoint(page, 'cme-attend');
+      await clickHeaderMenuItem(page, 'CME Conferences', 'Exhibit/Sponsor');
+      await visualCheckpoint(page, 'cme-exhibit');
+      await page.goto('https://binaytara.org/projects/conferences');
+    })
+  );
+  // funding opportunities
+  await test.step('Funding Opportunities section', () =>
+    runStepWithReporting(page, {
+      title: 'Funding Opportunities section',
+      section: 'Funding Opportunities',
+      screenshotPath: 'errors/funding-opportunities.png',
+      testName: 'Navigation and Links',
+    }, async () => {
+      await clickHeaderMenuItem(page, 'Funding Opportunities', 'Apply for an Award');
+      await visualCheckpoint(page, 'funding-apply');
+      await clickHeaderMenuItem(page, 'Funding Opportunities', 'Sponsor Research Awards');
+      await visualCheckpoint(page, 'funding-sponsor');
+    })
+  );
+  // projects
+  await test.step('Projects section', () =>
+    runStepWithReporting(page, {
+      title: 'Projects section',
+      section: 'Projects',
+      screenshotPath: 'errors/projects.png',
+      testName: 'Navigation and Links',
+    }, async () => {
+      await clickHeaderMenuItem(page, 'Projects', 'Global Oncology Programs');
+      await visualCheckpoint(page, 'projects-global');
+      await clickHeaderMenuItem(page, 'Projects', 'Global Oncology Mission in Nepal');
+      await visualCheckpoint(page, 'projects-nepal');
+      await clickHeaderMenuItem(page, 'Projects', 'Global Oncology Mission in Nigeria');
+      await visualCheckpoint(page, 'projects-nigeria');
+      await clickHeaderMenuItem(page, 'Projects', 'Center For Women\'s Cancer');
+      await visualCheckpoint(page, 'projects-womens-cancer');
+      await clickHeaderMenuItem(page, 'Projects', 'Advocacy and Policy Debates');
+      await visualCheckpoint(page, 'projects-advocacy');
+      await clickHeaderMenuItem(page, 'Projects', 'International Journal of Cance');
+      await visualCheckpoint(page, 'projects-journal');
+      await clickHeaderMenuItem(page, 'Projects', 'CME Conferences');
+      await visualCheckpoint(page, 'projects-cme');
+      await clickHeaderMenuItem(page, 'Projects', 'OncoBlast - Free CME/MOC ');
+      await visualCheckpoint(page, 'projects-oncoblast');
+      await clickHeaderMenuItem(page, 'Projects', 'The Cancer News');
+      await visualCheckpoint(page, 'projects-thecancernews');
+      await clickHeaderMenuItem(page, 'Projects', 'Internship Program');
+      await visualCheckpoint(page, 'projects-internship');
+    })
+  );
+  // get involved
+  await test.step('Get Involved section', () =>
+    runStepWithReporting(page, {
+      title: 'Get Involved section',
+      section: 'Get Involved',
+      screenshotPath: 'errors/get-involved.png',
+      testName: 'Navigation and Links',
+    }, async () => {
+      await clickHeaderMenuItem(page, 'Get Involved', 'Careers');
+      await visualCheckpoint(page, 'get-involved-careers');
+      await clickHeaderMenuItem(page, 'Get Involved', 'Volunteer');
+      await visualCheckpoint(page, 'get-involved-volunteer');
+      await clickHeaderMenuItem(page, 'Get Involved', 'Other Ways to Support');
+      await visualCheckpoint(page, 'get-involved-support');
+      await clickHeaderMenuItem(page, 'Get Involved', 'Internships');
+      await visualCheckpoint(page, 'get-involved-intern');
+      await clickHeaderMenuItem(page, 'Get Involved', 'Peer to Peer Fundraising');
+      await visualCheckpoint(page, 'get-involved-peertopeer');
+    })
+  );
+  // news
+  await test.step('News section', () =>
+    runStepWithReporting(page, {
+      title: 'News section',
+      section: 'News',
+      screenshotPath: 'errors/news.png',
+      testName: 'Navigation and Links',
+    }, async () => {
+      await clickHeaderMenuItem(page, 'News', 'Blog');
+      await visualCheckpoint(page, 'news-blog');
+      await clickHeaderMenuItem(page, 'News', 'Binaytara In The News');
+      await visualCheckpoint(page, 'news-binaytara');
+      await clickHeaderMenuItem(page, 'News', 'The Cancer News');
+      await visualCheckpoint(page, 'news-thecancernews');
+      await page.goto('https://binaytara.org/projects/conferences');
+    })
+  );
+  // ai search
+  await test.step('AI Search', () =>
+    runStepWithReporting(page, {
+      title: 'AI Search',
+      section: 'AI Search',
+      screenshotPath: 'errors/ai-search.png',
+      testName: 'Navigation and Links',
+    }, async () => {
+      await page.getByRole('button', { name: 'AI Search' }).click();
+      await page.getByRole('textbox', { name: 'Ask anything about our' }).fill('test');
+      await page.keyboard.press('Enter');
+    })
+  );
+
+  await page.close();
+  await browser.close();
+  console.log(`Session completed! View replay at https://browserbase.com/sessions/${session.id}`);
+});

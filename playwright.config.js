@@ -6,7 +6,6 @@ try {
     const [key, ...value] = line.split('=');
     if (key && value) {
       const joinedValue = value.join('=').trim();
-      // remove quotes
       const finalValue = joinedValue.startsWith('"') && joinedValue.endsWith('"') ? joinedValue.slice(1, -1) : joinedValue;
       process.env[key.trim()] = finalValue;
     }
@@ -16,36 +15,31 @@ try {
   console.error('Error loading .dev.vars:', e);
 }
 
-// @ts-check
 import { defineConfig } from '@playwright/test';
 
-/**
- * Browserbase + Cloudflare–safe Playwright config
- * - No local browsers
- * - No projects
- * - Browser controlled via fixture
- */
 export default defineConfig({
   testDir: './tests',
+  globalSetup: './src/utils/clearTestResults.js',
 
   timeout: 300_000,
 
   forbidOnly: !!process.env.CI,
 
-  // Keep retries low to avoid session waste
   retries: process.env.CI ? 1 : 0,
 
-  
-  workers: 1,
+  // Each worker creates a Browserbase session (plan supports 25 concurrent)
+  workers: process.env.CI ? 4 : 8,
 
   reporter: [
+    ['line'],
     ['html'],
     ['json', { outputFile: 'test-results.json' }],
+    ['./src/utils/slackReporter.js'],
   ],
 
   use: {
     headless: true,
-    viewport:{ width: 1280, height: 720}, 
+    viewport:{ width: 2560, height: 1440}, 
     deviceScaleFactor: 1,
     screenshot: 'off',
     video: 'off',    // Traces still work (stored by Playwright runner)
