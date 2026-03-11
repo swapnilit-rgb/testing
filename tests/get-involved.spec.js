@@ -16,6 +16,7 @@ test('Get Involved section', async () => {
       testName: 'Get Involved section',
     }, async () => {
       await page.goto('https://binaytara.org/');
+      await page.getByRole('button', { name: 'Close popup' }).click();
       await clickHeaderMenuItem(page, 'Get Involved', 'Careers');
       await visualCheckpoint(page, 'get-involved-careers');
       await clickHeaderMenuItem(page, 'Get Involved', 'Volunteer');

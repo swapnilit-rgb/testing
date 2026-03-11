@@ -16,6 +16,7 @@ test('About Us section', async () => {
       testName: 'About Us section',
     }, async () => {
       await page.goto('https://binaytara.org/');
+      await page.getByRole('button', { name: 'Close popup' }).click();
       await clickHeaderMenuItem(page, 'About Us', 'Mission and Values');
       await visualCheckpoint(page, 'about-mission');
       await clickHeaderMenuItem(page, 'About Us', 'Meet Our Team');
@@ -24,6 +25,8 @@ test('About Us section', async () => {
       await visualCheckpoint(page, 'about-financials');
       await clickHeaderMenuItem(page, 'About Us', 'Awards');
       await visualCheckpoint(page, 'about-awards');
+      await clickHeaderMenuItem(page, 'About Us', 'Strategic Planning');
+      await visualCheckpoint(page, 'strategic-planning');
     })
   );
 

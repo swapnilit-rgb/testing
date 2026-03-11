@@ -16,6 +16,7 @@ test('CME Conferences section', async () => {
       testName: 'CME Conferences section',
     }, async () => {
       await page.goto('https://binaytara.org/');
+      await page.getByRole('button', { name: 'Close popup' }).click();
       await clickHeaderMenuItem(page, 'CME Conferences', 'Attend');
       await visualCheckpoint(page, 'cme-attend');
       await clickHeaderMenuItem(page, 'CME Conferences', 'Exhibit/Sponsor');

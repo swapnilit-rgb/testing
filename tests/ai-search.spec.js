@@ -14,6 +14,7 @@ test('AI Search', async () => {
       testName: 'AI Search',
     }, async () => {
       await page.goto('https://binaytara.org/');
+      await page.getByRole('button', { name: 'Close popup' }).click();
       await page.getByRole('button', { name: 'AI Search' }).click();
       await page.getByRole('textbox', { name: 'Ask anything about our' }).fill('test');
       await page.keyboard.press('Enter');

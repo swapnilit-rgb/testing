@@ -16,6 +16,7 @@ test('News section', async () => {
       testName: 'News section',
     }, async () => {
       await page.goto('https://binaytara.org/');
+      await page.getByRole('button', { name: 'Close popup' }).click();
       await clickHeaderMenuItem(page, 'News', 'Blog');
       await visualCheckpoint(page, 'news-blog');
       await clickHeaderMenuItem(page, 'News', 'Binaytara In The News');

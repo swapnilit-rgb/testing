@@ -17,6 +17,7 @@ test('Projects section', async () => {
       testName: 'Projects section',
     }, async () => {
       await page.goto('https://binaytara.org/');
+      await page.getByRole('button', { name: 'Close popup' }).click();
       await clickHeaderMenuItem(page, 'Projects', 'Global Oncology Programs');
       await visualCheckpoint(page, 'projects-global');
       await clickHeaderMenuItem(page, 'Projects', 'Global Oncology Mission in Nepal');
