@@ -8,7 +8,7 @@ const createSession = async () => {
     });
     const session = await bb.sessions.create({
       projectId: process.env.BROWSERBASE_PROJECT_ID,
-      keepAlive: true,
+      keepAlive: false,
       // timeout: 3600,
     });
 

@@ -17,7 +17,6 @@ test('Projects section', async () => {
       testName: 'Projects section',
     }, async () => {
       await page.goto('https://binaytara.org/');
-      await page.getByRole('button', { name: 'Close popup' }).click();
       await clickHeaderMenuItem(page, 'Projects', 'Global Oncology Programs');
       await visualCheckpoint(page, 'projects-global');
       await clickHeaderMenuItem(page, 'Projects', 'Global Oncology Mission in Nepal');
@@ -30,6 +29,8 @@ test('Projects section', async () => {
       await visualCheckpoint(page, 'projects-advocacy');
       await clickHeaderMenuItem(page, 'Projects', 'International Journal of Cance');
       await visualCheckpoint(page, 'projects-journal');
+      await clickHeaderMenuItem(page, 'Projects', 'Research Awards');
+      await visualCheckpoint(page, 'projects-research');
       await clickHeaderMenuItem(page, 'Projects', 'CME Conferences');
       await visualCheckpoint(page, 'projects-cme');
       await clickHeaderMenuItem(page, 'Projects', 'OncoBlast - Free CME/MOC ');

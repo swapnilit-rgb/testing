@@ -16,11 +16,8 @@ test('Funding Opportunities section', async () => {
       testName: 'Funding Opportunities section',
     }, async () => {
       await page.goto('https://binaytara.org/');
-      await page.getByRole('button', { name: 'Close popup' }).click();
-      await clickHeaderMenuItem(page, 'Funding Opportunities', 'Apply for an Award');
-      await visualCheckpoint(page, 'funding-apply');
-      await clickHeaderMenuItem(page, 'Funding Opportunities', 'Sponsor Research Awards');
-      await visualCheckpoint(page, 'funding-sponsor');
+      await page.getByRole('link', { name: 'Funding Opportunities' }).click();
+      await visualCheckpoint(page, 'funding-opportunities');
     })
   );
 

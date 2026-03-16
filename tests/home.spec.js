@@ -15,7 +15,6 @@ test('Home page', async () => {
       testName: 'Home page',
     }, async () => {
       await page.goto('https://binaytara.org/');
-      await page.getByRole('button', { name: 'Close popup' }).click();
       await visualCheckpoint(page, 'home-page');
     })
   );
